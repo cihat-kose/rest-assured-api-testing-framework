@@ -1,6 +1,8 @@
+import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 public class ZippoTest {
 
@@ -28,8 +30,40 @@ public class ZippoTest {
                 .get("http://api.zippopotam.us/us/90210")
 
                 .then()
-                .log().body() // Returning body json data, log().all(): everythıng that goes and come
+                .log().body() // Returning body json data; log().all(): everythıng that goes and come
                 .statusCode(200) // Is the assertion status code 200?
+        ;
+    }
+
+    @Test
+    public void contentTypeTest() {
+
+        given()
+                // Preparation section is empty
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .log().body() // Returning body json data; log().all(): everythıng that goes and come
+                .statusCode(200) // Is the assertion status code 200?
+                .contentType(ContentType.JSON) // Is the type of returned data JSON?
+        ;
+    }
+
+    @Test
+    public void checkCountryInResponseBody(){
+
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .log().body()
+                .statusCode(200)  // Assertion
+                .body("country", equalTo("United States")) // Assertion
+                // Is body's country variable equal to "United States"?
         ;
     }
 }

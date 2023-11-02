@@ -28,7 +28,7 @@ public class ZippoTest {
                 .get("http://api.zippopotam.us/us/90210")
 
                 .then()
-                .log().body() // Returning body json data, log().all(): everything going back and forth
+                .log().body() // Returning body json data, log().all(): everythıng that goes and come
                 .statusCode(200) // Is the assertion status code 200?
         ;
     }

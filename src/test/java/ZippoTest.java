@@ -2,7 +2,8 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
+
 
 public class ZippoTest {
 
@@ -61,9 +62,9 @@ public class ZippoTest {
 
                 .then()
                 .log().body()
-                .statusCode(200)  // Assertion
-                .body("country", equalTo("United States")) // Assertion
-                // Is body's country variable equal to "United States"?
+                .statusCode(200)  // Assertion --> Is the assertion status code 200?
+                .contentType(ContentType.JSON) // Assertion --> Is the type of returned data JSON?
+                .body("country", equalTo("United States")) // Assertion --> Is body's country variable equal to "United States"?
         ;
     }
 }

@@ -22,7 +22,7 @@
             <version>5.2.0</version>
         </dependency>
 
-        <dependency> <!-- for writing tests (mac için 6.8.7)-->
+        <dependency> <!-- for writing tests (for mac 6.8.7)-->
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.0</version>

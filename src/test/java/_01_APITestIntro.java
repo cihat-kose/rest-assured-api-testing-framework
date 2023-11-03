@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 
-public class ZippoTest {
+public class _01_APITestIntro {
 
     @Test
     public void test01() {

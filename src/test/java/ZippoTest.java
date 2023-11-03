@@ -219,7 +219,7 @@ public class ZippoTest {
 
         /**
          https://gorest.co.in/public/v1/users?page=3
-         linkinden 1 den 10 kadar sayfaları çağırdığınızda response'daki donen page degerlerinin
+         linkinden 1 den 10 a kadar sayfaları çağırdığınızda response'daki donen page degerlerinin
          çağrılan page nosu ile aynı olup olmadığını kontrol ediniz.
          ----------------------------------------------------------------------
          https://gorest.co.in/public/v1/users?page=3

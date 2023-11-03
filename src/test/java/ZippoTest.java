@@ -228,7 +228,9 @@ public class ZippoTest {
          */
 
         for (int i = 1; i <= 10; i++) {
+
             given()
+
                     .param("page", i)
                     .log().uri()
 
@@ -248,6 +250,7 @@ public class ZippoTest {
 
     @BeforeClass
     public void setup(){
+
         baseURI = "https://gorest.co.in/public/v1";
 
         requestSpec= new RequestSpecBuilder()
@@ -264,12 +267,14 @@ public class ZippoTest {
 
     @Test
     public void requestResponseSpecification(){
+
         given()
+
                 .param("page",1)
                 .spec(requestSpec)
 
                 .when()
-                .get("/users") // http hok ise baseUri baş tarafına gelir.
+                .get("/users") // If there is no HTTP, baseUri is placed at the beginning.
 
                 .then()
                 .spec(responseSpec)

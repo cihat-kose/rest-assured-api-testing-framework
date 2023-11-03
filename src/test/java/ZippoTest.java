@@ -185,7 +185,7 @@ public class ZippoTest {
 
                 .pathParam("country", "us")
                 .pathParam("zipCode", 90210)
-                .log().uri() // request link çalışmadan önceki hali
+                .log().uri() // Before the request link works
 
                 .when()
                 .get("http://api.zippopotam.us/{country}/{zipCode}")

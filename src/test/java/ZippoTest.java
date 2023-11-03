@@ -113,16 +113,16 @@ public class ZippoTest {
         ;
     }
 
-    /**
-     * Soru : "http://api.zippopotam.us/us/90210" (endpoint) in dönen
-     * place dizisinin dizi uzunluğunun 1 olduğunu doğrulayınız.
-     * ----------------------------------------------------------------
-     * Question: Returning from "http://api.zippopotam.us/us/90210" (endpoint)
-     * Verify that the string length of the place array is 1.
-     */
-
     @Test
     public void bodyArrayHasSizeTest() {
+
+        /**
+         * Soru : "http://api.zippopotam.us/us/90210" (endpoint) in dönen
+         * place dizisinin dizi uzunluğunun 1 olduğunu doğrulayınız.
+         * ----------------------------------------------------------------
+         * Question: Returning from "http://api.zippopotam.us/us/90210" (endpoint)
+         * Verify that the string length of the place array is 1.
+         */
 
         given()
 
@@ -131,6 +131,18 @@ public class ZippoTest {
 
                 .then()
                 .body("places", hasSize(1)); // Is the item size of places equal to 1?
+        ;
+    }
+
+    @Test
+    public void bodyArrayHasSizeTest2(){
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .body("places.size()", equalTo(1)); // places ın item size 1 e eşit mi
         ;
     }
 }

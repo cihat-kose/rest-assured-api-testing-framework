@@ -203,7 +203,7 @@ public class ZippoTest {
         given()
 
                 .param("page", 1) // It is added to the link as ?page=1 // It can also be used with queryParam
-                .log().uri()
+                .log().uri() // Before the request link works
 
                 .when()
                 .get("https://gorest.co.in/public/v1/users") // ?page=1

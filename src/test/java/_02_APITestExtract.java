@@ -7,21 +7,24 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class _02_APITestExtract {
-    @Test
-    public void extractingJsonPath(){
 
-        String countryName=
+    @Test
+    public void extractingJSONPath() {
+
+        String countryName =
+
                 given()
+
                         .when()
                         .get("http://api.zippopotam.us/us/90210")
 
                         .then()
-                        .extract().path("country") // PATH i country olan değeri EXTRACT yap
+                        .extract().path("country") // Make PATH i country value EXTRACT
                 ;
 
 
         System.out.println("country = " + countryName);
-        Assert.assertEquals(countryName,"United States"); // alınan değer buna eşit mi
+        Assert.assertEquals(countryName, "United States"); // Is the received value equal to this?
     }
 
 

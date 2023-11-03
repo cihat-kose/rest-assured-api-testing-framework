@@ -207,5 +207,32 @@ public class ZippoTest {
         ;
     }
 
-   
+    @Test
+    public void queryParamTest2() {
+
+        /**
+         https://gorest.co.in/public/v1/users?page=3
+         linkinden 1 den 10 kadar sayfaları çağırdığınızda response'daki donen page degerlerinin
+         çağrılan page nosu ile aynı olup olmadığını kontrol ediniz.
+         ----------------------------------------------------------------------
+         https://gorest.co.in/public/v1/users?page=3
+         When you call pages 1 to 10 from the link, the returned page values in the response
+         Check whether it is the same as the called page number.
+         */
+
+        for (int i = 1; i <= 10; i++) {
+            given()
+                    .param("page", i)
+                    .log().uri()
+
+                    .when()
+                    .get("https://gorest.co.in/public/v1/users")
+
+                    .then()
+                    .statusCode(200)
+                    //.log().body()
+                    .body("meta.pagination.page", equalTo(i))
+            ;
+        }
+    }
 }

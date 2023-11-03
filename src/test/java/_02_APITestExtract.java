@@ -57,6 +57,32 @@ public class _02_APITestExtract {
         Assert.assertEquals(stateName, "California");
     }
 
+    @Test
+    public void extractingJSONPath3() {
+        /**
+         * Soru : "http://api.zippopotam.us/us/90210"  endpoint inden dönen place dizisinin ilk elemanının
+         * place name değerinin "Beverly Hills" olduğunu testNG Assertion ile doğrulayınız
+         * ------------------------------------------------------------------------------------------------------------
+         * Question: The first element of the place array returned from the endpoint "http://api.zippopotam.us/us/90210"
+         * verify that the place name value is "Beverly Hills" with testNG Assertion
+         */
+
+        String placeName =
+
+                given()
+
+                        .when()
+                        .get("http://api.zippopotam.us/us/90210")
+
+                        .then()
+                        .extract().path("places[0].'place name'")  // places[0]["place name"] alternative
+                ;
+
+
+        System.out.println("Place name = " + placeName);
+        Assert.assertEquals(placeName, "Beverly Hills");
+    }
+
 
 
 }

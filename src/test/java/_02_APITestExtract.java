@@ -30,8 +30,9 @@ public class _02_APITestExtract {
 
     @Test
     public void extractingJSONPath2() {
+
         /**
-         * Soru : "http://api.zippopotam.us/us/90210"  endpoint inden dönen place dizisinin ilk elemanının
+         * Soru: "http://api.zippopotam.us/us/90210"  endpoint inden dönen place dizisinin ilk elemanının
          * state değerinin "California" olduğunu testNG Assertion ile doğrulayınız
          * ------------------------------------------------------------------------------------------------------------
          * Question: The first element of the place array returned from the endpoint "http://api.zippopotam.us/us/90210"
@@ -59,8 +60,9 @@ public class _02_APITestExtract {
 
     @Test
     public void extractingJSONPath3() {
+
         /**
-         * Soru : "http://api.zippopotam.us/us/90210"  endpoint inden dönen place dizisinin ilk elemanının
+         * Soru: "http://api.zippopotam.us/us/90210"  endpoint inden dönen place dizisinin ilk elemanının
          * place name değerinin "Beverly Hills" olduğunu testNG Assertion ile doğrulayınız
          * ------------------------------------------------------------------------------------------------------------
          * Question: The first element of the place array returned from the endpoint "http://api.zippopotam.us/us/90210"
@@ -81,6 +83,31 @@ public class _02_APITestExtract {
 
         System.out.println("Place name = " + placeName);
         Assert.assertEquals(placeName, "Beverly Hills");
+    }
+
+    @Test
+    public void extractingJSONPath4() {
+
+        /**
+         * Soru: "https://gorest.co.in/public/v1/users"  endpoint inden dönen limit bilgisinin 10 olduğunu testNG ile doğrulayınız.
+         * ------------------------------------------------------------------------------------------------------------
+         * Question: Verify with testNG that the limit information returned from the "https://gorest.co.in/public/v1/users" endpoint is 10.
+         */
+
+        int limit =
+
+                given()
+
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
+
+                        .then()
+                        .log().body()
+                        .extract().path("meta.pagination.limit")
+                ;
+
+        System.out.println("limit = " + limit);
+        Assert.assertEquals(limit, 10, "The number of limits does not equal 10!");
     }
 
 

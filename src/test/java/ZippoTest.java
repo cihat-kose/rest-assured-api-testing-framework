@@ -17,7 +17,7 @@ public class ZippoTest {
                 // Endpoint (url), giving the method and sending the request
 
                 .then()
-               // Assertion, test, data operations
+        // Assertion, test, data operations
         ;
     }
 
@@ -53,7 +53,7 @@ public class ZippoTest {
     }
 
     @Test
-    public void checkCountryInResponseBody(){
+    public void checkCountryInResponseBody() {
 
         given()
 
@@ -65,6 +65,48 @@ public class ZippoTest {
                 .statusCode(200)  // Assertion --> Is the assertion status code 200?
                 .contentType(ContentType.JSON) // Assertion --> Is the type of returned data JSON?
                 .body("country", equalTo("United States")) // Assertion --> Is body's country variable equal to "United States"?
+        ;
+    }
+
+    @Test
+    public void checkStateInResponseBody() {
+
+        /** Soru : "http://api.zippopotam.us/us/90210"  endpoint inden dönen
+         place dizisinin ilk elemanının state değerinin "California" olduğunu doğrulayınız
+         ------------------------------------------------------------------------------------
+         Question: Returning from "http://api.zippopotam.us/us/90210" endpoint
+         Verify that the state value of the first element of the place array is "California" */
+
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .statusCode(200)
+                .body("places[0].state", equalTo("California"))
+        ;
+    }
+
+    @Test
+    public void checkHasItem() {
+        /** Soru : "http://api.zippopotam.us/tr/01000"  endpointinin dönen
+         place dizisinin herhangi bir elemanında "Dörtağaç Köyü" değerinin
+         olduğunu doğrulayınız
+         -------------------------------------------------------------------
+         Question: Returning endpoint "http://api.zippopotam.us/tr/01000"
+         The value of "Dörtağaç Village" in any element of the place array
+         Verify that it is
+         */
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/tr/01000")
+
+                .then()
+                //.log().body()
+                .body("places.'place name'", hasItem("Dörtağaç Köyü"))
+                .statusCode(200)
         ;
     }
 }

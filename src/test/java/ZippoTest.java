@@ -91,13 +91,15 @@ public class ZippoTest {
     @Test
     public void checkHasItem() {
 
-        /** Soru : "http://api.zippopotam.us/tr/01000"  endpointinin dönen
-         place dizisinin herhangi bir elemanında "Dörtağaç Köyü" değerinin
-         olduğunu doğrulayınız
-         -------------------------------------------------------------------
-         Question: Returning endpoint "http://api.zippopotam.us/tr/01000"
-         The value of "Dörtağaç Village" in any element of the place array
-         Verify that it is */
+        /**
+         * Soru : "http://api.zippopotam.us/tr/01000"  endpointinin dönen
+         * place dizisinin herhangi bir elemanında "Dörtağaç Köyü" değerinin
+         * olduğunu doğrulayınız
+         * -------------------------------------------------------------------
+         * Question: Returning endpoint "http://api.zippopotam.us/tr/01000"
+         * The value of "Dörtağaç Village" in any element of the place array
+         * Verify that it is
+         */
 
         given()
 
@@ -108,6 +110,27 @@ public class ZippoTest {
                 //.log().body()
                 .body("places.'place name'", hasItem("Dörtağaç Köyü"))
                 .statusCode(200)
+        ;
+    }
+
+    /**
+     * Soru : "http://api.zippopotam.us/us/90210" (endpoint) in dönen
+     * place dizisinin dizi uzunluğunun 1 olduğunu doğrulayınız.
+     * ----------------------------------------------------------------
+     * Question: Returning from "http://api.zippopotam.us/us/90210" (endpoint)
+     * Verify that the string length of the place array is 1.
+     */
+
+    @Test
+    public void bodyArrayHasSizeTest() {
+
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .body("places", hasSize(1)); // Is the item size of places equal to 1?
         ;
     }
 }

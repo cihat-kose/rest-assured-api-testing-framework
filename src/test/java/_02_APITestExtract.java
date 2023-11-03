@@ -146,6 +146,33 @@ public class _02_APITestExtract {
 
         System.out.println("names = " + names);
     }
+
+    @Test
+    public void extractingJSONPathResponseAll(){
+
+        Response incomingData=
+
+                given()
+
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
+
+                        .then()
+                        .extract().response()
+                ;
+
+        List<Integer> iDs= incomingData.path("data.id");
+        List<String> names= incomingData.path("data.name");
+        int limit = incomingData.path("meta.pagination.limit");
+
+        System.out.println("iDs = " + iDs);
+        System.out.println("names = " + names);
+        System.out.println("limit = " + limit);
+
+        Assert.assertTrue(names.contains("Mahesh Menon"));
+        Assert.assertTrue(iDs.contains(5599126));
+        Assert.assertEquals(limit, 10);
+    }
 }
 
 

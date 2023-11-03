@@ -145,4 +145,20 @@ public class ZippoTest {
                 .body("places.size()", equalTo(1)); // places ın item size 1 e eşit mi
         ;
     }
+
+    @Test
+    public void combiningTest(){
+
+        given()
+
+                .when()
+                .get("http://api.zippopotam.us/us/90210")
+
+                .then()
+                .statusCode(200)
+                .body("places", hasSize(1))
+                .body("places[0].state", equalTo("California"))
+                .body("places[0].'place name'", equalTo("Beverly Hills"))
+        ;
+    }
 }

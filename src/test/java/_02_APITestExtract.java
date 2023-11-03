@@ -128,8 +128,24 @@ public class _02_APITestExtract {
         System.out.println("iDs = " + iDs);
     }
 
+    @Test
+    public void extractingJSONPath6(){
 
+        // After the above test, print all the names returned at the end of the same endpoint.
 
+        List<String> names=
+
+                given()
+
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
+
+                        .then()
+                        .extract().path("data.name");
+        ;
+
+        System.out.println("names = " + names);
+    }
 }
 
 

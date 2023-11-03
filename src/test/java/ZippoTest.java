@@ -136,6 +136,15 @@ public class ZippoTest {
 
     @Test
     public void bodyArrayHasSizeTest2(){
+
+        /**
+         * Soru : "http://api.zippopotam.us/us/90210" (endpoint) in dönen
+         * place dizisinin dizi uzunluğunun 1 olduğunu doğrulayınız.
+         * ----------------------------------------------------------------
+         * Question: Returning from "http://api.zippopotam.us/us/90210" (endpoint)
+         * Verify that the string length of the place array is 1.
+         */
+
         given()
 
                 .when()

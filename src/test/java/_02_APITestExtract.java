@@ -110,6 +110,24 @@ public class _02_APITestExtract {
         Assert.assertEquals(limit, 10, "The number of limits does not equal 10!");
     }
 
+    @Test
+    public void extractingJSONPath5() {
+
+        List<Integer> iDs =
+
+                given()
+
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
+
+                        .then()
+                        .log().body()
+                        .extract().path("data.id");
+        ;
+
+        System.out.println("iDs = " + iDs);
+    }
+
 
 
 }

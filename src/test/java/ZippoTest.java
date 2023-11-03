@@ -135,7 +135,7 @@ public class ZippoTest {
     }
 
     @Test
-    public void bodyArrayHasSizeTest2(){
+    public void bodyArrayHasSizeTest2() {
 
         /**
          * Soru : "http://api.zippopotam.us/us/90210" (endpoint) in dönen
@@ -156,7 +156,7 @@ public class ZippoTest {
     }
 
     @Test
-    public void combiningTest(){
+    public void combiningTest() {
 
         given()
 
@@ -170,4 +170,42 @@ public class ZippoTest {
                 .body("places[0].'place name'", equalTo("Beverly Hills"))
         ;
     }
+
+    @Test
+    public void pathParamTest() {
+
+        given()
+
+                .pathParam("country", "us")
+                .pathParam("zipCode", 90210)
+                .log().uri() // request link çalışmadan önceki hali
+
+                .when()
+                .get("http://api.zippopotam.us/{country}/{zipCode}")
+
+                .then()
+                .statusCode(200)
+        ;
+    }
+
+    @Test
+    public void queryParamTest() {
+
+        // https://gorest.co.in/public/v1/users?page=3
+
+        given()
+
+                .param("page", 1) // It is added to the link as ?page=1 // It can also be used with queryParam
+                .log().uri()
+
+                .when()
+                .get("https://gorest.co.in/public/v1/users") // ?page=1
+
+                .then()
+                .statusCode(200)
+                .log().body()
+        ;
+    }
+
+   
 }

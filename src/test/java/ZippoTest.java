@@ -90,14 +90,15 @@ public class ZippoTest {
 
     @Test
     public void checkHasItem() {
+
         /** Soru : "http://api.zippopotam.us/tr/01000"  endpointinin dönen
          place dizisinin herhangi bir elemanında "Dörtağaç Köyü" değerinin
          olduğunu doğrulayınız
          -------------------------------------------------------------------
          Question: Returning endpoint "http://api.zippopotam.us/tr/01000"
          The value of "Dörtağaç Village" in any element of the place array
-         Verify that it is
-         */
+         Verify that it is */
+
         given()
 
                 .when()

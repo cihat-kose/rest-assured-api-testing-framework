@@ -42,17 +42,15 @@ public class _02_APITestExtract {
 
         String stateName =
 
-        given()
+                given()
 
-                .when()
-                .get("http://api.zippopotam.us/us/90210")
+                        .when()
+                        .get("http://api.zippopotam.us/us/90210")
 
 
-                .then()
-                .log().body()
-                .extract().path("places[0].state")
-
-        ;
+                        .then()
+                        .log().body()
+                        .extract().path("places[0].state");
 
         System.out.println("State name = " + stateName);
         Assert.assertEquals(stateName, "California");
@@ -103,8 +101,7 @@ public class _02_APITestExtract {
 
                         .then()
                         .log().body()
-                        .extract().path("meta.pagination.limit")
-                ;
+                        .extract().path("meta.pagination.limit");
 
         System.out.println("limit = " + limit);
         Assert.assertEquals(limit, 10, "The number of limits does not equal 10!");
@@ -129,11 +126,11 @@ public class _02_APITestExtract {
     }
 
     @Test
-    public void extractingJSONPath6(){
+    public void extractingJSONPath6() {
 
         // After the above test, print all the names returned at the end of the same endpoint.
 
-        List<String> names=
+        List<String> names =
 
                 given()
 
@@ -148,9 +145,9 @@ public class _02_APITestExtract {
     }
 
     @Test
-    public void extractingJSONPathResponseAll(){
+    public void extractingJSONPathResponseAll() {
 
-        Response incomingData=
+        Response incomingData =
 
                 given()
 
@@ -158,11 +155,10 @@ public class _02_APITestExtract {
                         .get("https://gorest.co.in/public/v1/users")
 
                         .then()
-                        .extract().response()
-                ;
+                        .extract().response();
 
-        List<Integer> iDs= incomingData.path("data.id");
-        List<String> names= incomingData.path("data.name");
+        List<Integer> iDs = incomingData.path("data.id");
+        List<String> names = incomingData.path("data.name");
         int limit = incomingData.path("meta.pagination.limit");
 
         System.out.println("iDs = " + iDs);

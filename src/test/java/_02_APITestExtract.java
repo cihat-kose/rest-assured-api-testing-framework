@@ -155,6 +155,7 @@ public class _02_APITestExtract {
                         .get("https://gorest.co.in/public/v1/users")
 
                         .then()
+                        .log().body()
                         .extract().response();
 
         List<Integer> iDs = incomingData.path("data.id");
@@ -165,8 +166,8 @@ public class _02_APITestExtract {
         System.out.println("names = " + names);
         System.out.println("limit = " + limit);
 
-        Assert.assertTrue(names.contains("Mahesh Menon"));
-        Assert.assertTrue(iDs.contains(5599126));
+        Assert.assertTrue(names.contains("Chidaatma Gandhi"));
+        Assert.assertTrue(iDs.contains(5673026));
         Assert.assertEquals(limit, 10);
     }
 }

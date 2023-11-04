@@ -249,11 +249,11 @@ public class _01_APITestIntro {
     ResponseSpecification responseSpec;
 
     @BeforeClass
-    public void setup(){
+    public void setup() {
 
         baseURI = "https://gorest.co.in/public/v1";
 
-        requestSpec= new RequestSpecBuilder()
+        requestSpec = new RequestSpecBuilder()
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.URI)  // log().uri()
                 .build();
@@ -266,11 +266,11 @@ public class _01_APITestIntro {
     }
 
     @Test
-    public void requestResponseSpecification(){
+    public void requestResponseSpecification() {
 
         given()
 
-                .param("page",1)
+                .param("page", 1)
                 .spec(requestSpec)
 
                 .when()

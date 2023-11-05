@@ -83,16 +83,15 @@ public class _07_GoRestCommentTest {
         ;
     }
 
-
     @Test(dependsOnMethods ="getCommentById" )
     public void commentUpdate(){
 
-        Map<String,String> updComment=new HashMap<>();
-        updComment.put("name", "İsmet Temur");
+        Map<String,String> updateComment=new HashMap<>();
+        updateComment.put("name", "Kerem Said");
 
         given()
                 .spec(reqSpec)
-                .body(updComment)
+                .body(updateComment)
 
                 .when()
                 .put(""+commentID)
@@ -102,7 +101,7 @@ public class _07_GoRestCommentTest {
                 .statusCode(200)
                 .contentType(ContentType.JSON)
                 .body("id", equalTo(commentID))
-                .body("name", equalTo("İsmet Temur"))
+                .body("name", equalTo("Kerem Said"))
         ;
     }
 

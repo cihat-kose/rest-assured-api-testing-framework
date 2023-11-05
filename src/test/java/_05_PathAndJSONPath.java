@@ -86,6 +86,30 @@ public class _05_PathAndJSONPath {
          */
     }
 
+    @Test
+    public void getUsersV1() {
 
+        /**
+         Print only the "data" part returned from the https://gorest.co.in/public/v1/users endpoint using POJO conversion.
+         -------------------------------------------------------------------------------
+         https://gorest.co.in/public/v1/users  endpointinden dönen sadece "data" kısmını POJO dönüşümü ile alarak yazdırınız.
+         */
 
+        List<User> userData =
+
+                given()
+
+                        .when()
+                        .get("https://gorest.co.in/public/v1/users")
+
+                        .then()
+                        .log().body()
+                        .extract().jsonPath().getList("data", User.class);
+
+        System.out.println("userData.get(0).getEmail() = " + userData.get(0).getEmail());
+
+        for (User user : userData) {
+            System.out.println("user = " + user);
+        }
+    }
 }

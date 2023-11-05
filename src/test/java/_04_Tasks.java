@@ -36,8 +36,8 @@ public class _04_Tasks {
          * create a request to https://jsonplaceholder.typicode.com/todos/2
          * expect status 200
          * expect content type JSON
-         *a) expect response completed status to be false(hamcrest)
-         *b) extract completed field and testNG assertion(testNG)
+         * a) expect response completed status to be false(hamcrest)
+         * b) extract completed field and testNG assertion(testNG)
          */
 
         boolean isCompleted =
@@ -50,9 +50,9 @@ public class _04_Tasks {
                         .then()
                         .statusCode(200)
                         .contentType(ContentType.JSON)
-                        .body("completed", equalTo(false)) // Assertion with hamcrest
+                        .body("completed", equalTo(false)) // a) Assertion with hamcrest
                         .extract().path("completed");
 
-        Assert.assertFalse(isCompleted); // Assertion with TestNG
+        Assert.assertFalse(isCompleted); // b) Assertion with TestNG
     }
 }

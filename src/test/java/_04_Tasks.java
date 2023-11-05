@@ -1,4 +1,5 @@
 import io.restassured.http.ContentType;
+import model.ToDo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -54,5 +55,27 @@ public class _04_Tasks {
                         .extract().path("completed");
 
         Assert.assertFalse(isCompleted); // b) Assertion with TestNG
+    }
+
+    @Test
+    public void task03() {
+
+        /** Task 3
+         * create a request to https://jsonplaceholder.typicode.com/todos/2
+         * expect status 200
+         * Converting Into POJO
+         */
+
+        ToDo toDo =
+
+                given()
+
+                        .when()
+                        .get("https://jsonplaceholder.typicode.com/todos/2")
+
+                        .then()
+                        .statusCode(200)
+                        .extract().body().as(ToDo.class)
+                ;
     }
 }

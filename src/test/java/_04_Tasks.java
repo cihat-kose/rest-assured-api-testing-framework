@@ -77,5 +77,7 @@ public class _04_Tasks {
                         .statusCode(200)
                         .extract().body().as(ToDo.class)
                 ;
+
+        System.out.println("toDo = " + toDo);
     }
 }

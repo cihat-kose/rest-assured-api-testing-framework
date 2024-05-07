@@ -24,7 +24,7 @@ public class _01_APITestIntro {
                 // Endpoint (url), giving the method and sending the request
 
                 .then()
-        // Assertion, test, data operations
+                // Assertion, test, data operations
         ;
     }
 

@@ -158,16 +158,16 @@ public class _03_APITestExtract {
                         .log().body()
                         .extract().response();
 
-        List<Integer> iDs = incomingData.path("data.id");
+        List<Integer> IDs = incomingData.path("data.id");
         List<String> names = incomingData.path("data.name");
         int limit = incomingData.path("meta.pagination.limit");
 
-        System.out.println("iDs = " + iDs);
+        System.out.println("IDs = " + IDs);
         System.out.println("names = " + names);
         System.out.println("limit = " + limit);
 
-        Assert.assertTrue(names.contains("Chidaatma Gandhi"));
-        Assert.assertTrue(iDs.contains(5673026));
+        Assert.assertTrue(names.contains("Shrishti Iyer"));
+        Assert.assertTrue(IDs.contains(6892470));
         Assert.assertEquals(limit, 10);
     }
 }

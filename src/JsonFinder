@@ -1,12 +1,12 @@
-https://jsonpathfinder.com/  bu siteden locatorlar gibi kolaylıkla test edilebilir
+https://jsonpathfinder.com/  It can be easily tested like locators from this site
 
 Postman                             RestAssured
 body =pm.Response.Json()            body
 body.country                        body("country")
 body.'post code'                    body("post Code")
                                     body("places[0].state")
-                                    body("places.state")  -> dizideki bütün stateleri verir
-                                    body("places.'place name'")  -> dizideki bütün stateleri verir
+                                    body("places.state")         -> Returns all states in the array
+                                    body("places.'place name'")  -> Returns all states in the array
 
 {
     "post code": "90210",

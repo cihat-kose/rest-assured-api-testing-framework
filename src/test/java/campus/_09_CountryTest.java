@@ -12,7 +12,7 @@ import java.util.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class _08_CountryTest {
+public class _09_CountryTest {
 
     Faker randomGenerator = new Faker();
     RequestSpecification reqSpec;

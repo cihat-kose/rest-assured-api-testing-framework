@@ -8,7 +8,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class _05_PathAndJSONPath {
+public class _06_PathAndJSONPath {
 
     @Test
     public void extractingPath() {

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class _04_Tasks {
+public class _05_Tasks {
     @Test
     public void task01() {
 

@@ -237,6 +237,7 @@ public class _01_APITestIntro {
 
                     .when()
                     .get("https://gorest.co.in/public/v1/users")
+                    //.get("https://gorest.co.in/public/v1/users?page=i")
 
                     .then()
                     .statusCode(200)
@@ -244,41 +245,5 @@ public class _01_APITestIntro {
                     .body("meta.pagination.page", equalTo(i))
             ;
         }
-    }
-
-    RequestSpecification requestSpec;
-    ResponseSpecification responseSpec;
-
-    @BeforeClass
-    public void setup() {
-
-        baseURI = "https://gorest.co.in/public/v1";
-
-        requestSpec = new RequestSpecBuilder()
-                .setContentType(ContentType.JSON)
-                .log(LogDetail.URI)  // log().uri()
-                .build();
-
-        responseSpec = new ResponseSpecBuilder()
-                .expectStatusCode(200)  // statusCode(200)
-                .log(LogDetail.BODY)  //log().body()
-                .expectContentType(ContentType.JSON)
-                .build();
-    }
-
-    @Test
-    public void requestResponseSpecification() {
-
-        given()
-
-                .param("page", 1)
-                .spec(requestSpec)
-
-                .when()
-                .get("/users") // If there is no HTTP, baseUri is placed at the beginning.
-
-                .then()
-                .spec(responseSpec)
-        ;
     }
 }

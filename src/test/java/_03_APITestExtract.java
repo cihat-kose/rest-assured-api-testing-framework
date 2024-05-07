@@ -6,7 +6,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class _02_APITestExtract {
+public class _03_APITestExtract {
 
     @Test
     public void extractingJSONPath() {

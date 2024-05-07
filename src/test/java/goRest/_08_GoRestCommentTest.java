@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class _07_GoRestCommentTest {
+public class _08_GoRestCommentTest {
 
     // GoRest Comment API Test
     Faker randomGenerator =new Faker();

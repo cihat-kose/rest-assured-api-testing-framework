@@ -198,7 +198,7 @@ public class _01_APITestIntro {
     @Test
     public void queryParamTest() {
 
-        // https://gorest.co.in/public/v1/users?page=3
+        // https://gorest.co.in/public/v1/users?page=1
 
         given()
 
@@ -207,6 +207,7 @@ public class _01_APITestIntro {
 
                 .when()
                 .get("https://gorest.co.in/public/v1/users") // ?page=1
+                // .get("https://gorest.co.in/public/v1/users?page=1")
 
                 .then()
                 .statusCode(200)

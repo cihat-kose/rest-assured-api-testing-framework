@@ -110,7 +110,7 @@ public class _03_APITestExtract {
     @Test
     public void extractingJSONPath5() {
 
-        List<Integer> iDs =
+        List<Integer> IDs =
 
                 given()
 
@@ -122,7 +122,7 @@ public class _03_APITestExtract {
                         .extract().path("data.id");
         ;
 
-        System.out.println("iDs = " + iDs);
+        System.out.println("IDs = " + IDs);
     }
 
     @Test

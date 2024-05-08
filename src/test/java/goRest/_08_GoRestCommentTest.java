@@ -27,7 +27,7 @@ public class _08_GoRestCommentTest {
         baseURI="https://gorest.co.in/public/v2/comments";
 
         reqSpec = new RequestSpecBuilder()
-                .addHeader("Authorization","Bearer 28605c0029e01366e56921feb365376892ddde09e0eb36e1aa40203896f50cd8")
+                .addHeader("Authorization","Bearer 1fcbe157c72a51f2477a4f42494d197421e70f8e05028ba4e1e2b2c74f503392")
                 .setContentType(ContentType.JSON)
                 .build();
     }
@@ -46,7 +46,7 @@ public class _08_GoRestCommentTest {
         String body= randomGenerator.lorem().paragraph();
 
         Map<String,String> newComment=new HashMap<>();
-        newComment.put("post_id", "82477");
+        newComment.put("post_id", "121605");
         newComment.put("name", fullName);
         newComment.put("email", email);
         newComment.put("body", body);

@@ -23,7 +23,7 @@ public class _07_GoRestUsersTest {
         baseURI = "https://gorest.co.in/public/v2/users";
 
         reqSpec = new RequestSpecBuilder()
-                .addHeader("Authorization", "Bearer 28605c0029e01366e56921feb365376892ddde09e0eb36e1aa40203896f50cd8")
+                .addHeader("Authorization", "Bearer 1fcbe157c72a51f2477a4f42494d197421e70f8e05028ba4e1e2b2c74f503392")
                 .setContentType(ContentType.JSON)
                 .build();
     }
@@ -37,7 +37,7 @@ public class _07_GoRestUsersTest {
         userID =
 
                 given()
-                        .header("Authorization", "Bearer 28605c0029e01366e56921feb365376892ddde09e0eb36e1aa40203896f50cd8")
+                        .header("Authorization", "Bearer 1fcbe157c72a51f2477a4f42494d197421e70f8e05028ba4e1e2b2c74f503392")
                         .body("{\"name\":\"" + randomFullName + "\", \"gender\":\"male\", \"email\":\"" + randomEmail + "\", \"status\":\"active\"}")
                         .contentType(ContentType.JSON)
 

@@ -30,10 +30,10 @@ GitHub Repository: [RestAssured_API_AutomationTesting_Framework](https://github.
 
 ### Tested APIs
 
-1. **GoRest API**: A public API offering endpoints for user and comment management. Allows testing of CRUD operations on users and comments. URL: `https://gorest.co.in/public/v2`.
-2. **Campus API**: A simulated API for managing locations like countries. This API is primarily used for testing authentication and resource management scenarios.
-3. **Zippopotam.us API**: A public API providing location information based on postal codes, commonly used for validating data retrieval. URL: `http://api.zippopotam.us`.
-4. **ReqRes API**: A testing API that supports user-related operations and is used to validate request creation and response handling. URL: `https://reqres.in/api`.
+1. **GoRest API**: A public API offering endpoints for user and comment management. Allows testing of CRUD operations on users and comments. URL: https://gorest.co.in/public/v2
+2. **Campus API**: A simulated API for managing locations like countries. This API is primarily used for testing authentication and resource management scenarios. URL: [https://gorest.co.in/public/v2](https://test.mersys.io/)
+3. **Zippopotam.us API**: A public API providing location information based on postal codes, commonly used for validating data retrieval. URL: http://api.zippopotam.us
+4. **ReqRes API**: A testing API that supports user-related operations and is used to validate request creation and response handling. URL: https://reqres.in/api
 
 ## Features
 

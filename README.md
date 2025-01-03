@@ -1,5 +1,5 @@
 
-# RestAssured_API_AutomationTesting_Framework
+# RestAssured API Testing Framework
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![RestAssured](https://img.shields.io/badge/RestAssured-6DB33F?style=for-the-badge&logo=java&logoColor=white)
@@ -24,9 +24,9 @@
 
 ## Project Overview
 
-The **RestAssured_API_AutomationTesting_Framework** is a Java-based API testing framework designed to test REST APIs with RestAssured, TestNG, and Hamcrest. This framework supports CRUD operations on multiple API endpoints, with comprehensive logging and assertions for validation. It includes support for JSON serialization/deserialization via Jackson and data randomization with JavaFaker.
+The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to test REST APIs with RestAssured, TestNG, and Hamcrest. This framework supports CRUD operations on multiple API endpoints, with comprehensive logging and assertions for validation. It includes support for JSON serialization/deserialization via Jackson and data randomization with JavaFaker.
 
-GitHub Repository: [RestAssured_API_AutomationTesting_Framework](https://github.com/ChatGTHB/RestAssured_API_AutomationTesting_Framework.git)
+GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat-kose/rest-assured-api-testing-framework.git)
 
 ### Tested APIs
 
@@ -56,7 +56,7 @@ GitHub Repository: [RestAssured_API_AutomationTesting_Framework](https://github.
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/ChatGTHB/RestAssured_API_AutomationTesting_Framework.git
+   git clone https://github.com/cihat-kose/rest-assured-api-testing-framework.git
    ```
 2. **Import the Project in IntelliJ IDEA**:
    - Open IntelliJ IDEA.
@@ -113,7 +113,7 @@ This project commonly encounters a variety of HTTP status codes in responses. Be
 ## Folder Structure
 
 ```plaintext
-RestAssured_API_AutomationTesting_Framework/
+cihat-kose/rest-assured-api-testing-framework/
 │
 ├── src/
 │   ├── main/

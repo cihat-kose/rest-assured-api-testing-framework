@@ -3,6 +3,7 @@
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![RestAssured](https://img.shields.io/badge/RestAssured-6DB33F?style=for-the-badge&logo=java&logoColor=white)
+![JUnit 5](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-FF7300?style=for-the-badge&logo=testng&logoColor=white)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-655c83?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-ff9933?style=for-the-badge)
@@ -31,9 +32,11 @@ GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat
 ### Tested APIs
 
 1. **GoRest API**: A public API offering endpoints for user and comment management. Allows testing of CRUD operations on users and comments. URL: https://gorest.co.in/public/v2
-2. **Campus API**: A simulated API for managing locations like countries. This API is primarily used for testing authentication and resource management scenarios. URL: [https://gorest.co.in/public/v2](https://test.mersys.io/)
+2. **Campus API**: A simulated API for managing locations like countries. This API is primarily used for testing authentication and resource management scenarios. URL: https://test.mersys.io/
 3. **Zippopotam.us API**: A public API providing location information based on postal codes, commonly used for validating data retrieval. URL: http://api.zippopotam.us
 4. **ReqRes API**: A testing API that supports user-related operations and is used to validate request creation and response handling. URL: https://reqres.in/api
+5. **Restful-Booker API**: A public API designed for testing hotel booking scenarios. Includes authentication, booking creation, update, retrieval, and deletion. URL: https://restful-booker.herokuapp.com
+
 
 ## Features
 
@@ -44,6 +47,9 @@ GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat
 - **Custom Request Specifications**: Leverages `RequestSpecification` and `ResponseSpecification` for reusable configurations.
 - **Comprehensive Logging**: Logs detailed information for requests and responses.
 - **Dependency Injection**: Provides flexibility with dependencies, managed through Maven.
+- **Hotel Booking API Testing**: Covers authentication, booking creation, retrieval, update, and deletion.
+- **Token-Based Authentication**: Uses token authentication to test secure API endpoints.
+
 
 ### Scenarios Covered
 - **API Key Authentication**: Tests API key-secured endpoints with headers.
@@ -104,6 +110,11 @@ mvn clean test
    - Located in `apiKeyTest.APIKeyTest`.
    - Demonstrates how to authenticate requests using API keys.
 
+5. **Restful-Booker API Test**:
+   - Located in `restBooker.RestfulBookerAPITest`.
+   - Covers hotel booking creation, retrieval, update, and deletion.
+   - Includes authentication and token management.
+
 ## HTTP Status Codes
 
 This project commonly encounters a variety of HTTP status codes in responses. Below is a summary of some frequently used status codes and their meanings:
@@ -133,6 +144,8 @@ cihat-kose/rest-assured-api-testing-framework/
 │       │   │   ├── Place.java
 │       │   │   ├── ToDo.java
 │       │   │   └── User.java
+│       │   ├── restBooker/             # Restful-Booker API tests
+│       │   │   ├── RestfulBookerAPITest.java
 │       └── resources/
 │           └── TestNG.xml            # TestNG suite configuration
 ├── target/                           # Build output
@@ -147,6 +160,7 @@ cihat-kose/rest-assured-api-testing-framework/
 Dependencies are managed in `pom.xml`. Key dependencies include:
 
 - **RestAssured**: For making HTTP requests to test APIs.
+- **JUnit 5**: Test framework for executing Restful-Booker API tests.
 - **TestNG**: For organizing and managing test execution.
 - **Hamcrest**: For enhanced assertions in test validations.
 - **Jackson**: For JSON serialization and deserialization.

@@ -145,7 +145,7 @@ cihat-kose/rest-assured-api-testing-framework/
 │       │   │   ├── ToDo.java
 │       │   │   └── User.java
 │       │   ├── restBooker/             # Restful-Booker API tests
-│       │   │   ├── RestfulBookerAPITest.java
+│       │   │   └── RestfulBookerAPITest.java
 │       └── resources/
 │           └── TestNG.xml            # TestNG suite configuration
 ├── target/                           # Build output

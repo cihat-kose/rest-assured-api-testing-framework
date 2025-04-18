@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -62,34 +62,11 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter</artifactId>-->
-<!--            <version>5.8.1</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-        <!-- JUnit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <!--    Setting the section to be run when Maven runs the test-->
     <!--    Plugin where we determine where Jenkins' run command will run -->
-    <!--    Uses TestNG test suite (TestNG.xml) instead of scanning all @Test classes -->
-    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html -->
+    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html-->
     <build>
         <plugins>
             <plugin>
@@ -97,18 +74,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
+
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
+
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.testng</groupId>
-                        <artifactId>testng</artifactId>
-                        <version>7.7.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
+
 </project>

@@ -54,41 +54,65 @@ This framework includes test scenarios against the following public/mock APIs:
 
 ## Features
 
-- **API Testing with RestAssured**: Supports `GET`, `POST`, `PUT`, and `DELETE` requests.
-- **POJO Modeling**: Models API responses using POJO classes for deserialization.
-- **Behavior-Driven Development**: Uses TestNG annotations for structured and readable test scenarios.
-- **Data Randomization**: Utilizes JavaFaker for generating random data, enhancing test variety.
-- **Custom Request Specifications**: Leverages `RequestSpecification` and `ResponseSpecification` for reusable configurations.
-- **Comprehensive Logging**: Logs detailed information for requests and responses.
-- **Dependency Injection**: Provides flexibility with dependencies, managed through Maven.
-- **Hotel Booking API Testing**: Covers authentication, booking creation, retrieval, update, and deletion.
-- **Token-Based Authentication**: Uses token authentication to test secure API endpoints.
+- **API Testing with RestAssured**  
+  Supports HTTP methods including `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` for comprehensive API coverage.
+
+- **POJO Modeling**  
+  Enables object-oriented validation by deserializing JSON responses into clean, reusable Java POJO classes.
+
+- **Behavior-Driven Development (BDD)**  
+  Uses TestNG annotations and fluent RestAssured syntax to define test flows clearly and readably.
+
+- **Data Randomization with DataFaker**  
+  Integrates `net.datafaker` to generate realistic and localized test data dynamically.
+
+- **Reusable Specifications**  
+  Utilizes `RequestSpecification` and `ResponseSpecification` to centralize request/response configurations.
+
+- **Token-Based Authentication**  
+  Handles authentication dynamically using tokens (e.g., for secured booking APIs).
+
+- **API Key Authentication**  
+  Supports header-based API key testing (e.g., for role-restricted endpoints like Campus API).
+
+- **Comprehensive Logging**  
+  Automatically logs URIs, request/response bodies, headers, and status codes to simplify debugging.
+
+- **Dependency Management with Maven**  
+  Ensures reliable builds and version control through Maven with clearly defined dependencies.
+
+- **Multi-API Integration**  
+  Implements test flows across five different public APIs to validate CRUD operations, auth flows, and data handling.
+
+---
 
 ### Scenarios Covered
 
-This framework enables testing a wide range of API testing scenarios, including:
+This framework is designed to validate a wide variety of API behaviors and edge cases:
 
-- **Authentication**
-   - Token-based authentication (e.g., Restful-Booker)
-   - API key validation (e.g., Campus API)
+- **Authentication Testing**
+  - Token-based auth flow including token generation and usage (e.g., Restful-Booker API).
+  - Header-based API key validation to access secured endpoints (e.g., Campus API).
 
 - **CRUD Operations**
-   - Creating, reading, updating, and deleting resources (users, countries, bookings, comments)
+  - Create, read, update, and delete scenarios for entities such as users, countries, bookings, and comments.
 
 - **Parameterized Testing**
-   - Using path and query parameters to validate pagination and filtered requests
+  - Uses `pathParam` and `queryParam` to test pagination, filtering, and dynamic path building.
 
-- **Data Extraction & Assertions**
-   - Verifying response bodies using Hamcrest matchers
-   - Extracting values with `.path()` and `.jsonPath()`
-   - Asserting response structure and business rules with TestNG
+- **Data Extraction & Assertion**
+  - Extracts fields using `.path()` and `.jsonPath()` for validation.
+  - Asserts response bodies and metadata with Hamcrest matchers and TestNG.
 
-- **Deserialization (POJO Mapping)**
-   - Mapping JSON responses into Java objects for clean and reusable assertions
+- **POJO-Based Validation**
+  - Maps entire or partial JSON responses to POJOs for deep structure validation.
 
-- **Reusable Specs & Logging**
-   - Centralized request/response specifications with `RequestSpecBuilder`
-   - Auto-logging of URIs, request bodies, and responses for easier debugging
+- **Reusable Request/Response Specs**
+  - Defines centralized configurations to promote cleaner test classes and reduce duplication.
+
+- **Logging and Reporting**
+  - Logs full request and response data.
+  - Integrates with reporting tools (e.g., Jenkins) for CI/CD visibility.
 
 ## Installation
 

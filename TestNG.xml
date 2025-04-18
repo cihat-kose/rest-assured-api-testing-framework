@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="Main Test">
         <classes>
-            <class name="campus._09_CountryTest">
+            <class name="restBooker.RestfulBookerAPITest">
             </class>
         </classes>
     </test>

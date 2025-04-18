@@ -1,10 +1,10 @@
 package goRest;
 
 import model.User;
-import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import net.datafaker.Faker;
 import org.testng.annotations.*;
 
 import java.util.*;

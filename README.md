@@ -7,7 +7,7 @@
 ![TestNG](https://img.shields.io/badge/TestNG-FF7300?style=for-the-badge&logo=testng&logoColor=white)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-655c83?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-ff9933?style=for-the-badge)
-![JavaFaker](https://img.shields.io/badge/JavaFaker-3b5b3f?style=for-the-badge)
+![DataFaker](https://img.shields.io/badge/DataFaker-00b2a9?style=for-the-badge)
 ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
 
 ## Table of Contents
@@ -164,7 +164,7 @@ Dependencies are managed in `pom.xml`. Key dependencies include:
 - **TestNG**: For organizing and managing test execution.
 - **Hamcrest**: For enhanced assertions in test validations.
 - **Jackson**: For JSON serialization and deserialization.
-- **JavaFaker**: For generating random test data.
+- **DataFaker**: For generating realistic and localized fake test data.
 - **SLF4J (Simple Logging Facade for Java)**: For logging support.
 
 ## Reporting and Logs

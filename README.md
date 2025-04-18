@@ -30,12 +30,25 @@ GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat
 
 ### Tested APIs
 
-1. **GoRest API**: A public API offering endpoints for user and comment management. Allows testing of CRUD operations on users and comments. URL: https://gorest.co.in/public/v2
-2. **Campus API**: A simulated API for managing locations like countries. This API is primarily used for testing authentication and resource management scenarios. URL: https://test.mersys.io/
-3. **Zippopotam.us API**: A public API providing location information based on postal codes, commonly used for validating data retrieval. URL: http://api.zippopotam.us
-4. **ReqRes API**: A testing API that supports user-related operations and is used to validate request creation and response handling. URL: https://reqres.in/api
-5. **Restful-Booker API**: A public API designed for testing hotel booking scenarios. Includes authentication, booking creation, update, retrieval, and deletion. URL: https://restful-booker.herokuapp.com
+1. **GoRest API**  
+   A public API providing endpoints for user and comment management. It supports full CRUD operations and is ideal for practicing authorization and payload testing.  
+   🔗 [https://gorest.co.in/public/v2](https://gorest.co.in/public/v2)
 
+2. **Campus API**  
+   A simulated educational API used to manage locations such as countries. Mainly used for testing role-based access, authentication, and secure POST/DELETE operations.  
+   🔗 [https://test.mersys.io](https://test.mersys.io)
+
+3. **Zippopotam.us API**  
+   Provides location and postal code data. Often used for validating response bodies, exploring JSON structures, and practicing JSONPath/POJO deserialization.  
+   🔗 [http://api.zippopotam.us](http://api.zippopotam.us)
+
+4. **ReqRes API**  
+   A dummy REST API widely used in frontend/backend testing. Allows testing of pagination, user creation, and BDD-style validations.  
+   🔗 [https://reqres.in/api](https://reqres.in/api)
+
+5. **Restful-Booker API**  
+   A public API designed to simulate hotel booking scenarios. Includes authentication via token and allows testing of all booking lifecycle actions (`POST`, `PUT`, `PATCH`, `DELETE`).  
+   🔗 [https://restful-booker.herokuapp.com](https://restful-booker.herokuapp.com)
 
 ## Features
 
@@ -48,7 +61,6 @@ GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat
 - **Dependency Injection**: Provides flexibility with dependencies, managed through Maven.
 - **Hotel Booking API Testing**: Covers authentication, booking creation, retrieval, update, and deletion.
 - **Token-Based Authentication**: Uses token authentication to test secure API endpoints.
-
 
 ### Scenarios Covered
 - **API Key Authentication**: Tests API key-secured endpoints with headers.
@@ -93,26 +105,50 @@ mvn clean test
 
 ### Key Test Scenarios
 
-1. **Country Test**:
-   - Located in `campus._09_CountryTest`.
-   - Covers country creation, duplicate check, update, and deletion.
+1. **Country Test**
+   - **Location**: `campus._09_CountryTest`
+   - Covers country creation, duplicate checks, updates, and deletions in the Campus API.
 
-2. **User Management in GoRest**:
-   - Located in `goRest._07_GoRestUsersTest`.
-   - Tests user creation, retrieval by ID, update, and deletion.
+2. **User Management in GoRest**
+   - **Location**: `goRest._07_GoRestUsersTest`
+   - Handles user creation, retrieval by ID, updating, and deletion.
 
-3. **Comments API Test**:
-   - Located in `goRest._08_GoRestCommentTest`.
-   - Manages comments by creating, retrieving, updating, and deleting comments.
+3. **Comments API Test**
+   - **Location**: `goRest._08_GoRestCommentTest`
+   - Manages comments: creation, retrieval, update, and deletion.
 
-4. **API Key Test**:
-   - Located in `apiKeyTest.APIKeyTest`.
-   - Demonstrates how to authenticate requests using API keys.
+4. **API Key Test**
+   - **Location**: `apiKeyTest.APIKeyTest`
+   - Demonstrates sending authenticated requests using API keys.
 
-5. **Restful-Booker API Test**:
-   - Located in `restBooker.RestfulBookerAPITest`.
-   - Covers hotel booking creation, retrieval, update, and deletion.
-   - Includes authentication and token management.
+5. **Restful-Booker API Test**
+   - **Location**: `restBooker.RestfulBookerAPITest`
+   - Tests hotel booking flows including token generation, booking creation, update (PUT & PATCH), retrieval, and deletion.
+
+6. **ReqRes API Test**
+   - **Location**: `reqres.ReqResUserTest`
+   - Includes status code checks, BDD-style tests, and user creation with POST.
+
+7. **Standalone API Learning Scenarios**
+   These test classes are located directly under `test/java` and focus on learning and practicing core API testing concepts:
+
+   - **`_01_APITestIntro`**  
+     Intro to basic `GET` requests, response logging, JSON field validation, and assertions with Hamcrest.
+
+   - **`_02_APITestSpec`**  
+     Demonstrates usage of reusable specifications with `RequestSpecBuilder` and `ResponseSpecBuilder`.
+
+   - **`_03_APITestExtract`**  
+     Focuses on extracting response data using `.path()` and validating it with TestNG assertions.
+
+   - **`_04_APITestPOJO`**  
+     Shows how to deserialize JSON responses into custom POJO classes like `Location` and `Place`.
+
+   - **`_05_Tasks`**  
+     Collection of exercise-style tasks using `jsonplaceholder.typicode.com` with validation and POJO handling.
+
+   - **`_06_PathAndJSONPath`**  
+     Explains and contrasts usage of `.path()` vs `.jsonPath()` in extracting nested JSON data and converting to Java objects.
 
 ## HTTP Status Codes
 
@@ -130,28 +166,37 @@ cihat-kose/rest-assured-api-testing-framework/
 │   │   └── java/
 │   └── test/
 │       ├── java/
-│       │   ├── apiKeyTest/           # API Key authentication tests
+│       │   ├── apiKeyTest/             # API Key authentication tests
 │       │   │   └── APIKeyTest.java
-│       │   ├── campus/               # Campus-related API tests
+│       │   ├── campus/                 # Campus-related API tests
 │       │   │   ├── _09_CountryTest.java
 │       │   │   └── Country.java
-│       │   ├── goRest/               # GoRest API tests
+│       │   ├── goRest/                 # GoRest API tests
 │       │   │   ├── _07_GoRestUsersTest.java
 │       │   │   └── _08_GoRestCommentTest.java
-│       │   ├── model/                # POJO models for JSON data
+│       │   ├── model/                  # POJO models for JSON data
 │       │   │   ├── Location.java
 │       │   │   ├── Place.java
 │       │   │   ├── ToDo.java
 │       │   │   └── User.java
+│       │   ├── reqres/                 # ReqRes API tests
+│       │   │   └── ReqResUserTest.java
 │       │   ├── restBooker/             # Restful-Booker API tests
 │       │   │   └── RestfulBookerAPITest.java
+│       │   ├── _01_APITestIntro.java   # Intro to basic API tests and assertions
+│       │   ├── _02_APITestSpec.java    # Reusable request/response specifications
+│       │   ├── _03_APITestExtract.java # Extracting and asserting response data
+│       │   ├── _04_APITestPOJO.java    # Deserialization into POJOs
+│       │   ├── _05_Tasks.java          # Task-style practical API test cases
+│       │   └── _06_PathAndJSONPath.java# Path vs JSONPath examples and comparison
+│       │
 │       └── resources/
-│           └── TestNG.xml            # TestNG suite configuration
-├── target/                           # Build output
-├── images/                           # Directory for project images
-│   └── HTTP_Status_Codes.png         # HTTP status codes image
-├── pom.xml                           # Maven configuration file
-└── README.md                         # Project README
+│           └── TestNG.xml              # TestNG suite configuration
+├── target/                             # Build output
+├── images/                             # Project images
+│   └── HTTP_Status_Codes.png           # HTTP status codes reference image
+├── pom.xml                             # Maven configuration file
+└── README.md                           # Project README
 ```
 
 ## Dependencies

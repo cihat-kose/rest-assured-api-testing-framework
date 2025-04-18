@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test name="Main Test">
+<suite name="Standalone API Tests">
+    <test name="API Tests in Root Package">
         <classes>
-            <class name="campus._09_CountryTest">
-            </class>
+            <class name="_01_APITestIntro"/>
+            <class name="_02_APITestSpec"/>
+            <class name="_03_APITestExtract"/>
+            <class name="_04_APITestPOJO"/>
+            <class name="_05_Tasks"/>
+            <class name="_06_PathAndJSONPath"/>
         </classes>
     </test>
 </suite>

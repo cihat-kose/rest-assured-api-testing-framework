@@ -24,31 +24,22 @@
 
 ## Project Overview
 
-The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to test REST APIs with RestAssured, TestNG, and Hamcrest. This framework supports CRUD operations on multiple API endpoints, with comprehensive logging and assertions for validation. It includes support for JSON serialization/deserialization via Jackson and data randomization with JavaFaker.
+The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using RestAssured, TestNG, and Hamcrest. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with Jackson. The framework uses **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
 
 GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat-kose/rest-assured-api-testing-framework.git)
 
 ### Tested APIs
 
-1. **GoRest API**  
-   A public API providing endpoints for user and comment management. It supports full CRUD operations and is ideal for practicing authorization and payload testing.  
-   🔗 [https://gorest.co.in/public/v2](https://gorest.co.in/public/v2)
+This framework includes test scenarios against 5 public or mock APIs to cover various testing cases such as CRUD operations, authentication, JSON handling, and POJO deserialization.
 
-2. **Campus API**  
-   A simulated educational API used to manage locations such as countries. Mainly used for testing role-based access, authentication, and secure POST/DELETE operations.  
-   🔗 [https://test.mersys.io](https://test.mersys.io)
+APIs used:
+- **GoRest API**
+- **Campus API**
+- **Zippopotam.us API**
+- **ReqRes API**
+- **Restful-Booker API**
 
-3. **Zippopotam.us API**  
-   Provides location and postal code data. Often used for validating response bodies, exploring JSON structures, and practicing JSONPath/POJO deserialization.  
-   🔗 [http://api.zippopotam.us](http://api.zippopotam.us)
-
-4. **ReqRes API**  
-   A dummy REST API widely used in frontend/backend testing. Allows testing of pagination, user creation, and BDD-style validations.  
-   🔗 [https://reqres.in/api](https://reqres.in/api)
-
-5. **Restful-Booker API**  
-   A public API designed to simulate hotel booking scenarios. Includes authentication via token and allows testing of all booking lifecycle actions (`POST`, `PUT`, `PATCH`, `DELETE`).  
-   🔗 [https://restful-booker.herokuapp.com](https://restful-booker.herokuapp.com)
+> Detailed scenarios per API are listed under [Key Test Scenarios](#key-test-scenarios).
 
 ## Features
 
@@ -63,11 +54,30 @@ GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat
 - **Token-Based Authentication**: Uses token authentication to test secure API endpoints.
 
 ### Scenarios Covered
-- **API Key Authentication**: Tests API key-secured endpoints with headers.
-- **CRUD Operations**:
-  - **Country Management**: Creates, updates, and deletes countries in the Campus API.
-  - **User Management**: Handles user creation, retrieval, updating, and deletion in the GoRest API.
-- **Assertions with Hamcrest**: Validates responses with assertions on fields like status codes, body content, and more.
+
+This framework enables testing a wide range of API testing scenarios, including:
+
+- **Authentication**
+   - Token-based authentication (e.g., Restful-Booker)
+   - API key validation (e.g., Campus API)
+
+- **CRUD Operations**
+   - Creating, reading, updating, and deleting resources (users, countries, bookings, comments)
+
+- **Parameterized Testing**
+   - Using path and query parameters to validate pagination and filtered requests
+
+- **Data Extraction & Assertions**
+   - Verifying response bodies using Hamcrest matchers
+   - Extracting values with `.path()` and `.jsonPath()`
+   - Asserting response structure and business rules with TestNG
+
+- **Deserialization (POJO Mapping)**
+   - Mapping JSON responses into Java objects for clean and reusable assertions
+
+- **Reusable Specs & Logging**
+   - Centralized request/response specifications with `RequestSpecBuilder`
+   - Auto-logging of URIs, request bodies, and responses for easier debugging
 
 ## Installation
 

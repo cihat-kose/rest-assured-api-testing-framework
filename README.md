@@ -1,9 +1,8 @@
 
 # RestAssured API Testing Framework
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Java 17+](https://img.shields.io/badge/Java%2017+-required-blue?style=for-the-badge&logo=openjdk)
 ![RestAssured](https://img.shields.io/badge/RestAssured-6DB33F?style=for-the-badge&logo=java&logoColor=white)
-![JUnit 5](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-FF7300?style=for-the-badge&logo=testng&logoColor=white)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-655c83?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-ff9933?style=for-the-badge)
@@ -157,10 +156,11 @@ cihat-kose/rest-assured-api-testing-framework/
 
 ## Dependencies
 
+> ⚠️ This project uses Java 17 features (e.g., text blocks, modern APIs). Ensure your JDK version is 17 or above.
+
 Dependencies are managed in `pom.xml`. Key dependencies include:
 
 - **RestAssured**: For making HTTP requests to test APIs.
-- **JUnit 5**: Test framework for executing Restful-Booker API tests.
 - **TestNG**: For organizing and managing test execution.
 - **Hamcrest**: For enhanced assertions in test validations.
 - **Jackson**: For JSON serialization and deserialization.

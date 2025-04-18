@@ -1,13 +1,13 @@
 
 # RestAssured API Testing Framework
 
-![Java 17+](https://img.shields.io/badge/Java%2017+-required-blue?style=for-the-badge&logo=openjdk)
-![RestAssured](https://img.shields.io/badge/RestAssured-6DB33F?style=for-the-badge&logo=java&logoColor=white)
-![TestNG](https://img.shields.io/badge/TestNG-FF7300?style=for-the-badge&logo=testng&logoColor=white)
-![Hamcrest](https://img.shields.io/badge/Hamcrest-655c83?style=for-the-badge)
-![Jackson](https://img.shields.io/badge/Jackson-ff9933?style=for-the-badge)
-![DataFaker](https://img.shields.io/badge/DataFaker-00b2a9?style=for-the-badge)
-![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
+![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
+![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge)
+![TestNG](https://img.shields.io/badge/TestNG-7.x-orange?style=for-the-badge)
+![Hamcrest](https://img.shields.io/badge/Hamcrest-assertions-purple?style=for-the-badge)
+![Jackson](https://img.shields.io/badge/Jackson-JSON--binding-ff9933?style=for-the-badge)
+![DataFaker](https://img.shields.io/badge/DataFaker-dynamic--data-teal?style=for-the-badge)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-critical?style=for-the-badge&logo=jenkins)
 
 ## Table of Contents
 

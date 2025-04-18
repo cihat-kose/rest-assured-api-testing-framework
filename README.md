@@ -26,8 +26,6 @@
 
 The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using RestAssured, TestNG, and Hamcrest. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with Jackson. The framework uses **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
 
-GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat-kose/rest-assured-api-testing-framework.git)
-
 ### Tested APIs
 
 This framework includes test scenarios against 5 public or mock APIs to cover various testing cases such as CRUD operations, authentication, JSON handling, and POJO deserialization.

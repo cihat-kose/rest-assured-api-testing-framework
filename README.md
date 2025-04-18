@@ -24,20 +24,33 @@
 
 ## Project Overview
 
-The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using RestAssured, TestNG, and Hamcrest. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with Jackson. The framework uses **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
+The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using **RestAssured**, **TestNG**, and **Hamcrest**. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with **Jackson**. The framework leverages **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
 
 ### Tested APIs
 
-This framework includes test scenarios against 5 public or mock APIs to cover various testing cases such as CRUD operations, authentication, JSON handling, and POJO deserialization.
+This framework includes test scenarios against the following public/mock APIs:
 
-APIs used:
-- **GoRest API**
-- **Campus API**
-- **Zippopotam.us API**
-- **ReqRes API**
-- **Restful-Booker API**
+- **GoRest API**  
+  User and comment management with full CRUD support.  
+  🔗 https://gorest.co.in/public/v2
 
-> Detailed scenarios per API are listed under [Key Test Scenarios](#key-test-scenarios).
+- **Campus API**  
+  Simulates country/location management with role-based authentication.  
+  🔗 https://test.mersys.io
+
+- **Zippopotam.us API**  
+  Provides postal code and location data for validating JSON structure and values.  
+  🔗 http://api.zippopotam.us
+
+- **ReqRes API**  
+  Allows testing of pagination, user creation, and BDD validations.  
+  🔗 https://reqres.in/api
+
+- **Restful-Booker API**  
+  Designed to simulate hotel booking flows with authentication and full lifecycle actions (`POST`, `PUT`, `PATCH`, `DELETE`).  
+  🔗 https://restful-booker.herokuapp.com
+
+> For detailed test implementations, see [Key Test Scenarios](#key-test-scenarios).
 
 ## Features
 

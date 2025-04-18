@@ -88,7 +88,8 @@
 
     <!--    Setting the section to be run when Maven runs the test-->
     <!--    Plugin where we determine where Jenkins' run command will run -->
-    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html-->
+    <!--    Uses TestNG test suite (TestNG.xml) instead of scanning all @Test classes -->
+    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html -->
     <build>
         <plugins>
             <plugin>
@@ -96,14 +97,18 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <version>7.7.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
-
 </project>

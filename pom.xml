@@ -16,72 +16,72 @@
     </properties>
 
     <dependencies>
-        <dependency> <!-- for making api tests -->
+        <!-- Override vulnerable transitive dependency from rest-assured and others -->
+        <!-- CVE: WS-2019-0379 - Information disclosure in versions < 1.13 -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.17.1</version>
+        </dependency>
+
+        <!-- Core library for making REST API tests -->
+        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.4.0</version>
         </dependency>
 
-        <dependency> <!-- for writing tests -->
+        <!-- Test framework used across the entire suite -->
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.7.0</version>
         </dependency>
 
-        <dependency>  <!-- for assertions in body -->
+        <!-- For fluent assertion support inside RestAssured body() -->
+        <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
         </dependency>
 
+        <!-- JSON serialization/deserialization -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.17.0</version>
         </dependency>
 
-        <!-- Remove Javafaker -->
-        <!-- <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency> -->
-
-        <!-- Datafaker (new, active, secure) -->
+        <!-- Test data generator (replacement for deprecated JavaFaker) -->
         <dependency>
             <groupId>net.datafaker</groupId>
             <artifactId>datafaker</artifactId>
             <version>2.3.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
+        <!-- Prevents slf4j warnings (used by datafaker, rest-assured) -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
             <version>1.7.32</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
-    <!--    Setting the section to be run when Maven runs the test-->
-    <!--    Plugin where we determine where Jenkins' run command will run -->
-    <!--    https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html-->
     <build>
         <plugins>
+            <!-- Ensures TestNG tests are executed via TestNG.xml in desired order -->
+            <!-- This is especially important for CI/CD environments like Jenkins -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-
                     <suiteXmlFiles>
                         <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>

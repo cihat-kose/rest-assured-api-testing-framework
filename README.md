@@ -1,13 +1,13 @@
 
 # RestAssured API Testing Framework
 
-![Java 17+](https://img.shields.io/badge/Java%2017+-required-blue?style=for-the-badge&logo=openjdk)
-![RestAssured](https://img.shields.io/badge/RestAssured-6DB33F?style=for-the-badge&logo=java&logoColor=white)
-![TestNG](https://img.shields.io/badge/TestNG-FF7300?style=for-the-badge&logo=testng&logoColor=white)
-![Hamcrest](https://img.shields.io/badge/Hamcrest-655c83?style=for-the-badge)
-![Jackson](https://img.shields.io/badge/Jackson-ff9933?style=for-the-badge)
-![DataFaker](https://img.shields.io/badge/DataFaker-00b2a9?style=for-the-badge)
-![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)
+![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
+![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge)
+![TestNG](https://img.shields.io/badge/TestNG-7.x-orange?style=for-the-badge)
+![Hamcrest](https://img.shields.io/badge/Hamcrest-assertions-purple?style=for-the-badge)
+![Jackson](https://img.shields.io/badge/Jackson-JSON--binding-ff9933?style=for-the-badge)
+![DataFaker](https://img.shields.io/badge/DataFaker-dynamic--data-teal?style=for-the-badge)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-critical?style=for-the-badge&logo=jenkins)
 
 ## Table of Contents
 
@@ -24,60 +24,95 @@
 
 ## Project Overview
 
-The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using RestAssured, TestNG, and Hamcrest. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with Jackson. The framework uses **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
-
-GitHub Repository: [rest-assured-api-testing-framework](https://github.com/cihat-kose/rest-assured-api-testing-framework.git)
+The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using **RestAssured**, **TestNG**, and **Hamcrest**. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with **Jackson**. The framework leverages **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
 
 ### Tested APIs
 
-This framework includes test scenarios against 5 public or mock APIs to cover various testing cases such as CRUD operations, authentication, JSON handling, and POJO deserialization.
+This framework includes test scenarios against the following public/mock APIs:
 
-APIs used:
-- **GoRest API**
-- **Campus API**
-- **Zippopotam.us API**
-- **ReqRes API**
-- **Restful-Booker API**
+- **GoRest API**  
+  User and comment management with full CRUD support.  
+  🔗 https://gorest.co.in/public/v2
 
-> Detailed scenarios per API are listed under [Key Test Scenarios](#key-test-scenarios).
+- **Campus API**  
+  Simulates country/location management with role-based authentication.  
+  🔗 https://test.mersys.io
+
+- **Zippopotam.us API**  
+  Provides postal code and location data for validating JSON structure and values.  
+  🔗 http://api.zippopotam.us
+
+- **ReqRes API**  
+  Allows testing of pagination, user creation, and BDD validations.  
+  🔗 https://reqres.in/api
+
+- **Restful-Booker API**  
+  Designed to simulate hotel booking flows with authentication and full lifecycle actions (`POST`, `PUT`, `PATCH`, `DELETE`).  
+  🔗 https://restful-booker.herokuapp.com
+
+> For detailed test implementations, see [Key Test Scenarios](#key-test-scenarios).
 
 ## Features
 
-- **API Testing with RestAssured**: Supports `GET`, `POST`, `PUT`, and `DELETE` requests.
-- **POJO Modeling**: Models API responses using POJO classes for deserialization.
-- **Behavior-Driven Development**: Uses TestNG annotations for structured and readable test scenarios.
-- **Data Randomization**: Utilizes JavaFaker for generating random data, enhancing test variety.
-- **Custom Request Specifications**: Leverages `RequestSpecification` and `ResponseSpecification` for reusable configurations.
-- **Comprehensive Logging**: Logs detailed information for requests and responses.
-- **Dependency Injection**: Provides flexibility with dependencies, managed through Maven.
-- **Hotel Booking API Testing**: Covers authentication, booking creation, retrieval, update, and deletion.
-- **Token-Based Authentication**: Uses token authentication to test secure API endpoints.
+- **API Testing with RestAssured**  
+  Supports HTTP methods including `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` for comprehensive API coverage.
+
+- **POJO Modeling**  
+  Enables object-oriented validation by deserializing JSON responses into clean, reusable Java POJO classes.
+
+- **Behavior-Driven Development (BDD)**  
+  Uses TestNG annotations and fluent RestAssured syntax to define test flows clearly and readably.
+
+- **Data Randomization with DataFaker**  
+  Integrates `net.datafaker` to generate realistic and localized test data dynamically.
+
+- **Reusable Specifications**  
+  Utilizes `RequestSpecification` and `ResponseSpecification` to centralize request/response configurations.
+
+- **Token-Based Authentication**  
+  Handles authentication dynamically using tokens (e.g., for secured booking APIs).
+
+- **API Key Authentication**  
+  Supports header-based API key testing (e.g., for role-restricted endpoints like Campus API).
+
+- **Comprehensive Logging**  
+  Automatically logs URIs, request/response bodies, headers, and status codes to simplify debugging.
+
+- **Dependency Management with Maven**  
+  Ensures reliable builds and version control through Maven with clearly defined dependencies.
+
+- **Multi-API Integration**  
+  Implements test flows across five different public APIs to validate CRUD operations, auth flows, and data handling.
+
+---
 
 ### Scenarios Covered
 
-This framework enables testing a wide range of API testing scenarios, including:
+This framework is designed to validate a wide variety of API behaviors and edge cases:
 
-- **Authentication**
-   - Token-based authentication (e.g., Restful-Booker)
-   - API key validation (e.g., Campus API)
+- **Authentication Testing**
+  - Token-based auth flow including token generation and usage (e.g., Restful-Booker API).
+  - Header-based API key validation to access secured endpoints (e.g., Campus API).
 
 - **CRUD Operations**
-   - Creating, reading, updating, and deleting resources (users, countries, bookings, comments)
+  - Create, read, update, and delete scenarios for entities such as users, countries, bookings, and comments.
 
 - **Parameterized Testing**
-   - Using path and query parameters to validate pagination and filtered requests
+  - Uses `pathParam` and `queryParam` to test pagination, filtering, and dynamic path building.
 
-- **Data Extraction & Assertions**
-   - Verifying response bodies using Hamcrest matchers
-   - Extracting values with `.path()` and `.jsonPath()`
-   - Asserting response structure and business rules with TestNG
+- **Data Extraction & Assertion**
+  - Extracts fields using `.path()` and `.jsonPath()` for validation.
+  - Asserts response bodies and metadata with Hamcrest matchers and TestNG.
 
-- **Deserialization (POJO Mapping)**
-   - Mapping JSON responses into Java objects for clean and reusable assertions
+- **POJO-Based Validation**
+  - Maps entire or partial JSON responses to POJOs for deep structure validation.
 
-- **Reusable Specs & Logging**
-   - Centralized request/response specifications with `RequestSpecBuilder`
-   - Auto-logging of URIs, request bodies, and responses for easier debugging
+- **Reusable Request/Response Specs**
+  - Defines centralized configurations to promote cleaner test classes and reduce duplication.
+
+- **Logging and Reporting**
+  - Logs full request and response data.
+  - Integrates with reporting tools (e.g., Jenkins) for CI/CD visibility.
 
 ## Installation
 

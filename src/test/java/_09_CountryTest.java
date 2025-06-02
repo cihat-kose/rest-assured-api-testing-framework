@@ -1,9 +1,8 @@
-package campus;
-
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
 import io.restassured.specification.RequestSpecification;
+import model.Country;
 import net.datafaker.Faker;
 import org.testng.annotations.*;
 
@@ -101,7 +100,7 @@ public class _09_CountryTest {
     @Test(dependsOnMethods = "createCountryNegative")
     public void updateCountry() {
 
-        String newCountryName = "Updated Country" + randomGenerator.number().digits(5);
+        String newCountryName = "Updated model.Country" + randomGenerator.number().digits(5);
         Map<String, String> updateCountry = new HashMap<>();
         updateCountry.put("id", countryID);
         updateCountry.put("name", newCountryName);
@@ -146,7 +145,7 @@ public class _09_CountryTest {
                 .then()
                 .log().body()
                 .statusCode(400)
-                .body("message", equalTo("Country not found"))
+                .body("message", equalTo("model.Country not found"))
         ;
     }
 

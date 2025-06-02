@@ -1,5 +1,3 @@
-package reqres;
-
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -10,7 +8,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-public class ReqResUserTest {
+public class _11_ReqresUserTest {
 
     @Test
     public void firstTestScenario() {

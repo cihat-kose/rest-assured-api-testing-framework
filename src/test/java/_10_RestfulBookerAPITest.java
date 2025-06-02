@@ -1,5 +1,3 @@
-package restBooker;
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -8,7 +6,7 @@ import org.testng.annotations.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class RestfulBookerAPITest {
+public class _10_RestfulBookerAPITest {
 
     private int bookingId;
     private String token;

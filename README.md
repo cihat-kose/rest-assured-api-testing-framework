@@ -115,50 +115,41 @@ mvn clean test
 
 ### Key Test Scenarios
 
-1. **Country Test**
-   - **Location**: `campus._09_CountryTest`
-   - Covers country creation, duplicate checks, updates, and deletions in the Campus API.
+1. **_01_APITestIntro.java**  
+   Intro to basic `GET` requests, response logging, JSON field validation, and assertions with Hamcrest.
 
-2. **User Management in GoRest**
-   - **Location**: `goRest._07_GoRestUsersTest`
-   - Handles user creation, retrieval by ID, updating, and deletion.
+2. **_02_APITestSpec.java**  
+   Demonstrates usage of reusable specifications with `RequestSpecBuilder` and `ResponseSpecBuilder`.
 
-3. **Comments API Test**
-   - **Location**: `goRest._08_GoRestCommentTest`
-   - Manages comments: creation, retrieval, update, and deletion.
+3. **_03_APITestExtract.java**  
+   Focuses on extracting response data using `.path()` and validating with TestNG assertions.
 
-4. **API Key Test**
-   - **Location**: `apiKeyTest.APIKeyTest`
-   - Demonstrates sending authenticated requests using API keys.
+4. **_04_APITestPOJO.java**  
+   Shows how to deserialize JSON responses into custom POJO classes like `Location` and `Place`.
 
-5. **Restful-Booker API Test**
-   - **Location**: `restBooker.RestfulBookerAPITest`
-   - Tests hotel booking flows including token generation, booking creation, update (PUT & PATCH), retrieval, and deletion.
+5. **_05_Tasks.java**  
+   Collection of exercise-style test cases using `jsonplaceholder.typicode.com` with validation and POJO handling.
 
-6. **ReqRes API Test**
-   - **Location**: `reqres.ReqResUserTest`
-   - Includes status code checks, BDD-style tests, and user creation with POST.
+6. **_06_PathAndJSONPath.java**  
+   Explains and contrasts usage of `.path()` vs `.jsonPath()` in extracting nested JSON data and converting to Java objects.
 
-7. **Standalone API Learning Scenarios**
-   These test classes are located directly under `test/java` and focus on learning and practicing core API testing concepts:
+7. **_07_GoRestUsersTest.java**  
+   Handles user creation, retrieval by ID, updating, and deletion using GoRest API.
 
-   - **`_01_APITestIntro`**  
-     Intro to basic `GET` requests, response logging, JSON field validation, and assertions with Hamcrest.
+8. **_08_GoRestCommentTest.java**  
+   Manages comments: creation, retrieval, update, and deletion.
 
-   - **`_02_APITestSpec`**  
-     Demonstrates usage of reusable specifications with `RequestSpecBuilder` and `ResponseSpecBuilder`.
+9. **_09_CountryTest.java**  
+   Covers country creation, duplicate checks, updates, and deletions in the Campus API.
 
-   - **`_03_APITestExtract`**  
-     Focuses on extracting response data using `.path()` and validating it with TestNG assertions.
+10. **_10_RestfulBookerAPITest.java**  
+    Tests hotel booking flows: token generation, booking creation, update (PUT & PATCH), retrieval, and deletion.
 
-   - **`_04_APITestPOJO`**  
-     Shows how to deserialize JSON responses into custom POJO classes like `Location` and `Place`.
+11. **_11_ReqresUserTest.java**  
+    Includes status code checks, BDD-style tests, and user creation with POST.
 
-   - **`_05_Tasks`**  
-     Collection of exercise-style tasks using `jsonplaceholder.typicode.com` with validation and POJO handling.
-
-   - **`_06_PathAndJSONPath`**  
-     Explains and contrasts usage of `.path()` vs `.jsonPath()` in extracting nested JSON data and converting to Java objects.
+12. **_12_APIKeyTest.java**  
+    Demonstrates sending authenticated requests using API keys.
 
 ## HTTP Status Codes
 
@@ -172,41 +163,35 @@ This project commonly encounters a variety of HTTP status codes in responses. Be
 cihat-kose/rest-assured-api-testing-framework/
 │
 ├── src/
-│   ├── main/
-│   │   └── java/
 │   └── test/
 │       ├── java/
-│       │   ├── apiKeyTest/             # API Key authentication tests
-│       │   │   └── APIKeyTest.java
-│       │   ├── campus/                 # Campus-related API tests
-│       │   │   ├── _09_CountryTest.java
-│       │   │   └── Country.java
-│       │   ├── goRest/                 # GoRest API tests
-│       │   │   ├── _07_GoRestUsersTest.java
-│       │   │   └── _08_GoRestCommentTest.java
-│       │   ├── model/                  # POJO models for JSON data
+│       │   ├── model/                        # POJO models for JSON response data
+│       │   │   ├── Country.java
 │       │   │   ├── Location.java
 │       │   │   ├── Place.java
 │       │   │   ├── ToDo.java
 │       │   │   └── User.java
-│       │   ├── reqres/                 # ReqRes API tests
-│       │   │   └── ReqResUserTest.java
-│       │   ├── restBooker/             # Restful-Booker API tests
-│       │   │   └── RestfulBookerAPITest.java
-│       │   ├── _01_APITestIntro.java   # Intro to basic API tests and assertions
-│       │   ├── _02_APITestSpec.java    # Reusable request/response specifications
-│       │   ├── _03_APITestExtract.java # Extracting and asserting response data
-│       │   ├── _04_APITestPOJO.java    # Deserialization into POJOs
-│       │   ├── _05_Tasks.java          # Task-style practical API test cases
-│       │   └── _06_PathAndJSONPath.java# Path vs JSONPath examples and comparison
+│       │   ├── _01_APITestIntro.java        # Intro to basic API tests and assertions
+│       │   ├── _02_APITestSpec.java         # Reusable request/response specifications
+│       │   ├── _03_APITestExtract.java      # Extracting and asserting response data
+│       │   ├── _04_APITestPOJO.java         # Deserialization into POJOs
+│       │   ├── _05_Tasks.java               # Task-style practical API test cases
+│       │   ├── _06_PathAndJSONPath.java     # Path vs JSONPath comparison
+│       │   ├── _07_GoRestUsersTest.java     # GoRest: user CRUD
+│       │   ├── _08_GoRestCommentTest.java   # GoRest: comment CRUD
+│       │   ├── _09_CountryTest.java         # Campus API: country CRUD
+│       │   ├── _10_RestfulBookerAPITest.java# Restful-Booker: full booking flow
+│       │   ├── _11_ReqresUserTest.java      # ReqRes: status & BDD testing
+│       │   └── _12_APIKeyTest.java          # API Key authentication testing
 │       │
 │       └── resources/
-│           └── TestNG.xml              # TestNG suite configuration
-├── target/                             # Build output
-├── images/                             # Project images
-│   └── HTTP_Status_Codes.png           # HTTP status codes reference image
-├── pom.xml                             # Maven configuration file
-└── README.md                           # Project README
+│           └── TestNG.xml                   # TestNG suite configuration
+│
+├── target/                                  # Build output (generated)
+├── images/                                  # Project images
+│   └── HTTP_Status_Codes.png                # HTTP status codes reference image
+├── pom.xml                                  # Maven build configuration
+└── README.md                                # Project overview and structure
 ```
 
 ## Dependencies

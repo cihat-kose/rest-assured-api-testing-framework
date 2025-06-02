@@ -1,4 +1,4 @@
-package campus;
+package model;
 
 public class Country {
     public String id;

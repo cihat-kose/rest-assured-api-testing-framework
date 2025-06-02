@@ -1,5 +1,3 @@
-package apiKeyTest;
-
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -13,7 +11,7 @@ import static io.restassured.RestAssured.given;
     value:GwMco9Tpstd5vbzBzlzW9I7hr6E1D7w2zEIrhOra
  */
 
-public class APIKeyTest {
+public class _12_APIKeyTest {
     @Test
     public void apiKeyTest() {
 

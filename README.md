@@ -1,8 +1,8 @@
 
-# RestAssured API Testing Framework
+# RestAssured API Learning Path
 
 ![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
-![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge)
+![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge&logo=java)
 ![TestNG](https://img.shields.io/badge/TestNG-7.x-orange?style=for-the-badge)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-assertions-purple?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-JSON--binding-ff9933?style=for-the-badge)
@@ -24,31 +24,31 @@
 
 ## Project Overview
 
-The **rest-assured-api-testing-framework** is a Java-based API testing framework designed to automate REST API validations using **RestAssured**, **TestNG**, and **Hamcrest**. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with **Jackson**. The framework leverages **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
+The **restassured-api-learning-path** is a Java-based API testing framework designed to automate REST API validations using **RestAssured**, **TestNG**, and **Hamcrest**. It supports comprehensive CRUD operations across multiple public APIs and includes structured logging, assertions, and POJO-based deserialization with **Jackson**. The framework leverages **DataFaker** to generate dynamic and localized test data, enhancing variability in test scenarios.
 
 ### Tested APIs
 
 This framework includes test scenarios against the following public/mock APIs:
 
-- **GoRest API**  
-  User and comment management with full CRUD support.  
-  🔗 https://gorest.co.in/public/v2
-
-- **Campus API**  
-  Simulates country/location management with role-based authentication.  
-  🔗 https://test.mersys.io
-
 - **Zippopotam.us API**  
   Provides postal code and location data for validating JSON structure and values.  
   🔗 http://api.zippopotam.us
 
-- **ReqRes API**  
-  Allows testing of pagination, user creation, and BDD validations.  
-  🔗 https://reqres.in/api
+- **GoRest API**  
+  User and comment management with full CRUD support.  
+  🔗 https://gorest.co.in/public/v2
+
+- **Campus API (Mersys)**  
+  Simulates country/location management with role-based authentication.  
+  🔗 https://test.mersys.io
 
 - **Restful-Booker API**  
   Designed to simulate hotel booking flows with authentication and full lifecycle actions (`POST`, `PUT`, `PATCH`, `DELETE`).  
   🔗 https://restful-booker.herokuapp.com
+
+- **Reqres API**  
+  Allows testing of pagination, user creation, and BDD validations.  
+  🔗 https://reqres.in/api
 
 > For detailed test implementations, see [Key Test Scenarios](#key-test-scenarios).
 
@@ -84,41 +84,11 @@ This framework includes test scenarios against the following public/mock APIs:
 - **Multi-API Integration**  
   Implements test flows across five different public APIs to validate CRUD operations, auth flows, and data handling.
 
----
-
-### Scenarios Covered
-
-This framework is designed to validate a wide variety of API behaviors and edge cases:
-
-- **Authentication Testing**
-  - Token-based auth flow including token generation and usage (e.g., Restful-Booker API).
-  - Header-based API key validation to access secured endpoints (e.g., Campus API).
-
-- **CRUD Operations**
-  - Create, read, update, and delete scenarios for entities such as users, countries, bookings, and comments.
-
-- **Parameterized Testing**
-  - Uses `pathParam` and `queryParam` to test pagination, filtering, and dynamic path building.
-
-- **Data Extraction & Assertion**
-  - Extracts fields using `.path()` and `.jsonPath()` for validation.
-  - Asserts response bodies and metadata with Hamcrest matchers and TestNG.
-
-- **POJO-Based Validation**
-  - Maps entire or partial JSON responses to POJOs for deep structure validation.
-
-- **Reusable Request/Response Specs**
-  - Defines centralized configurations to promote cleaner test classes and reduce duplication.
-
-- **Logging and Reporting**
-  - Logs full request and response data.
-  - Integrates with reporting tools (e.g., Jenkins) for CI/CD visibility.
-
 ## Installation
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/cihat-kose/rest-assured-api-testing-framework.git
+   git clone https://github.com/cihat-kose/restassured-api-learning-path.git
    ```
 2. **Import the Project in IntelliJ IDEA**:
    - Open IntelliJ IDEA.
@@ -130,7 +100,7 @@ This framework is designed to validate a wide variety of API behaviors and edge 
 
 ## Configuration
 
-- **TestNG.xml**: Contains configurations for TestNG test execution.
+- **TestNG.xml**: Defines the suite structure and test class execution flow.
 - **pom.xml**: Manages dependencies and configurations for the framework. 
 
 ## Usage
@@ -195,7 +165,7 @@ This project commonly encounters a variety of HTTP status codes in responses. Be
 ## Folder Structure
 
 ```plaintext
-cihat-kose/rest-assured-api-testing-framework/
+cihat-kose/restassured-api-learning-path/
 │
 ├── src/
 │   └── test/

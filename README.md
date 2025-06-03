@@ -1,13 +1,15 @@
 
 # RestAssured API Learning Path
 
-![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
 ![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge&logo=java)
+![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-7.x-orange?style=for-the-badge)
+![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-critical?style=for-the-badge&logo=jenkins)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-assertions-purple?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-JSON--binding-ff9933?style=for-the-badge)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
 ![DataFaker](https://img.shields.io/badge/DataFaker-dynamic--data-teal?style=for-the-badge)
-![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-critical?style=for-the-badge&logo=jenkins)
 
 ## Table of Contents
 

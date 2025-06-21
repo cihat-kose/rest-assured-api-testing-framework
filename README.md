@@ -2,9 +2,8 @@
 # RestAssured API Learning Path
 
 ![RestAssured](https://img.shields.io/badge/RestAssured-5.x-brightgreen?style=for-the-badge&logo=java)
-![Cucumber](https://img.shields.io/badge/Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-7.x-orange?style=for-the-badge)
-![Java](https://img.shields.io/badge/Java-17%2B-blue?style=for-the-badge&logo=openjdk)
+![Java](https://img.shields.io/badge/Java-21%2B-blue?style=for-the-badge&logo=openjdk)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-critical?style=for-the-badge&logo=jenkins)
 ![Hamcrest](https://img.shields.io/badge/Hamcrest-assertions-purple?style=for-the-badge)
 ![Jackson](https://img.shields.io/badge/Jackson-JSON--binding-ff9933?style=for-the-badge)
@@ -191,8 +190,8 @@ cihat-kose/restassured-api-learning-path/
 │       │   ├── _11_ReqresUserTest.java      # ReqRes: status & BDD testing
 │       │   └── _12_APIKeyTest.java          # API Key authentication testing
 │       │
-│       └── resources/
-│           └── TestNG.xml                   # TestNG suite configuration
+│
+├── TestNG.xml                              # TestNG suite configuration
 │
 ├── target/                                  # Build output (generated)
 ├── images/                                  # Project images
@@ -203,7 +202,7 @@ cihat-kose/restassured-api-learning-path/
 
 ## Dependencies
 
-> ⚠️ This project uses Java 17 features (e.g., text blocks, modern APIs). Ensure your JDK version is 17 or above.
+> ⚠️ This project uses Java 21 features (e.g., text blocks, modern APIs). Ensure your JDK version is 21 or above.
 
 Dependencies are managed in `pom.xml`. Key dependencies include:
 
